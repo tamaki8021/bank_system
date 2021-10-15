@@ -22,3 +22,12 @@ func (a *Account) Deposit(amount float64) error {
 	a.Balance += amount
 	return nil
 }
+
+func (a *Account) Withdraw(amount float64) error {
+	if amount <= 0 {
+		return errors.New("the amount to deposit should be greater than zero")
+	}
+
+	a.Balance -= amount
+	return nil
+}
